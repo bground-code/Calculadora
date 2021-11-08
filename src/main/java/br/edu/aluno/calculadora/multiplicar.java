@@ -1,5 +1,6 @@
 package br.edu.aluno.calculadora;
 
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -7,15 +8,15 @@ import org.springframework.web.servlet.ModelAndView;
 
 
 @Controller
-public class Calculadora {
+public class multiplicar {
     // Metodo para receber requisições do metodo post 
-    @PostMapping(value="calcular")
-    public ModelAndView postMethodName(@RequestParam String operacao1, @RequestParam String operacao2) {
+    @PostMapping(value="multiplicar")
+    public ModelAndView postMethodName(@RequestParam String n1, @RequestParam String n2) {
         //TODO: process POST request 
-        Double operando1Double = Double.valueOf(operacao1);
-        Double operando2Double = Double.valueOf(operacao2);
+        Double n12 = Double.valueOf(n1);
+        Double n22 = Double.valueOf(n2);
         
-        Double resultado = operando2Double + operando1Double;
+        Double resultado = n12 * n22;
 
         ModelAndView modelAndView = new ModelAndView("resultado");
         modelAndView.addObject("resultado", resultado);
@@ -23,7 +24,6 @@ public class Calculadora {
         return modelAndView;
     }
 
-    
 
   
     
